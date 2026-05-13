@@ -5,3 +5,7 @@ document.getElementById('btn-light').addEventListener('click', () => {
 document.getElementById('btn-dark').addEventListener('click', () => {
     document.documentElement.setAttribute('data-theme', 'dark');
 });
+
+const lenis = new Lenis({
+    autoRaf: true,
+});
