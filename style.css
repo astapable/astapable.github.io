@@ -16,6 +16,7 @@
 }
 
 :root {
+    color-scheme: light;
     font-family: "Geist";
     font-weight: 400;
     font-size: 120%;
@@ -23,11 +24,22 @@
 
     /* ==================== VARIABLES ==================== */
 
+    /* HEADER */
+    --header-offset-top: -0.35rem;
+    --header-offset-bottom: -0.25rem;
+    --underline-thickness: 0.125rem;
+
     /* PRIMARY COLORS */
     --black: #222222;
     --white: #FAFAFA;
-    --gray: #CDCDCD;
-    --light-gray: #EDEDED;
+    --gray: #BDBDBD;
+    --light-gray: #E8E8E8;
+    --card-body: #EDEDED;
+
+    /* SVG */
+    --svg-mid: #454545;
+    --svg-end: #000000;
+    --svg-eyes: #FAFAFA;
 
     /* FONT SIZE */
     --body: 0.688rem;
@@ -38,7 +50,6 @@
 
     /* SPACING */
     --xs: 0.375rem; /* 6px */
-    --s: 0.75rem; /* 12px */
     --m: 0.75rem; /* 12px */
 
     @media (width > 600px) {
@@ -63,6 +74,18 @@
     }
 }
 
+[data-theme="dark"] {
+    color-scheme: dark;
+    --black: #FAFAFA;
+    --white: #222222;
+    --gray: #545454;
+    --light-gray: #747474;
+    --card-body: #2A2A2A;
+    --svg-mid: #BDBDBD;
+    --svg-end: #FAFAFA;
+    --svg-eyes: #222222;
+}
+
 /* ==================== CONTAINERS STYLE ==================== */
 
 body {
@@ -75,8 +98,8 @@ header {
     width: 100%;
     position: fixed;
     padding: var(--medium);
-    margin-block-start: -0.35rem;
-    margin-block-end: -0.25rem;
+    margin-block-start: var(--header-offset-top);
+    margin-block-end: var(--header-offset-bottom);
 }
 
 nav,
@@ -114,7 +137,6 @@ nav ul {
     display: inline-flex;
     justify-content: flex-end;
 }
-
 
 /* MAIN CONTAINERS */
 main {
@@ -168,7 +190,7 @@ hgroup p {
 .cover {
     width: 100%;
     padding: var(--large);
-    background-color: var(--light-gray);
+    background-color: var(--card-body);
 }
 
 figure {
@@ -183,7 +205,10 @@ h1, p {
     line-height: 140%;
 }
 
-a {
+a,
+button,
+nav p {
+    font-family: "Geist";
     font-weight: 600;
     font-size: var(--body);
     line-height: 100%;
@@ -192,21 +217,27 @@ a {
     text-transform: uppercase;
 }
 
-a:hover {
-    text-decoration: underline;
-    text-decoration-thickness: 0.125rem;
+a,
+button {
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
 }
 
-nav p {
-    font-weight: 600;
-    font-size: var(--body);
-    line-height: 100%;
-    color: var(--black);
-    text-transform: uppercase;
+a:hover,
+button:hover {
+    text-decoration: underline;
+    text-decoration-thickness: var(--underline-thickness);
+}
+
+html:not([data-theme="dark"]) #btn-dark,
+html[data-theme="dark"] #btn-light {
+    color: var(--gray);
 }
 
 footer p {
     line-height: 100%;
-    color: var(--black);
+    color: var(--gray);
     text-transform: uppercase;
 }

@@ -13,6 +13,7 @@
 			@import 'reset.css' layer(reset);
 			@import 'style.css' layer(style);
 		</style>
+        <script defer src="script.js"></script>
     </head>
     <body>
         <header>
@@ -22,11 +23,11 @@
                 </div>
                 <ul class="toggle">
                     <li>
-                        <a href="index.html">Light Mode</a>
+                        <button id="btn-light">Light Mode</button>
                     </li>
                         <p>/</p>
                     <li>
-                        <a href="index.html">Dark Mode</a>
+                        <button id="btn-dark">Dark Mode</button>
                     </li>
                 </ul>
                 <ul class="contacts">
@@ -34,7 +35,7 @@
                         <a href="https://astapable.com/" target="_blank">Folio</a>
                     </li>
                     <li>
-                        <a href="https://www.linkedin.com/in/evgenii-astapov/" target="_blank">Linked In</a>
+                        <a href="https://www.linkedin.com/in/evgenii-astapov/" target="_blank">LinkedIn</a>
                     </li>
                     <li>
                         <a href="mailto:astapable@gmail.com" target="_blank">Email</a>
@@ -44,8 +45,42 @@
         </header>
         <main>
             <hgroup>
+                <svg width="104" height="87" viewBox="0 0 104 87" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.007 66.1006C18.007 71.7626 14.7076 76.8784 9.98931 76.8784C4.7318 76.8784 0 73.1982 0 66.1006C0 60.4385 2.49733 55.8484 9.46349 55.8484C14.1819 55.8484 18.007 60.4385 18.007 66.1006Z" fill="url(#paint0_linear_85_185)"/>
+                    <path d="M85.3026 66.1006C85.3026 71.7626 88.6021 76.8784 93.3203 76.8784C98.5774 76.8784 103.309 73.1982 103.309 66.1006C103.309 60.4385 100.812 55.8484 93.8464 55.8484C89.1272 55.8484 85.3026 60.4385 85.3026 66.1006Z" fill="url(#paint1_linear_85_185)"/>
+                    <path d="M51.655 13C61.1184 13.0001 71.4865 13.7502 79.1253 19.8348C87.2466 26.3033 91.8327 38.7802 93.5837 48.6196C95.2068 57.7463 93.4324 66.1286 87.4064 73.3298C82.854 78.769 76.582 82.8758 69.6618 84.502C63.7413 85.8931 57.9639 86.0793 51.655 86.0793C45.3459 86.0793 39.5685 85.8931 33.648 84.502C26.7278 82.8758 20.4556 78.769 15.9039 73.3298C9.87766 66.1289 8.10254 57.7463 9.72632 48.6196C11.4772 38.7802 16.0635 26.3033 24.1845 19.8348C31.8234 13.7502 42.1915 13.0001 51.655 13Z" fill="url(#paint2_linear_85_185)"/>
+                    <path d="M28.6975 24.3102C34.8117 24.3103 40.0791 25.5675 43.7649 28.2106C47.3471 30.7796 49.6545 34.8104 49.6545 40.9636C49.6544 53.4463 40.1593 63.3559 28.6975 63.3561C17.2355 63.3561 7.73963 53.4464 7.7395 40.9636C7.7395 34.8105 10.047 30.7796 13.6292 28.2106C17.315 25.5674 22.5831 24.3102 28.6975 24.3102Z" fill="var(--svg-eyes)" stroke="url(#paint3_linear_85_185)" stroke-width="4"/>
+                    <path d="M74.6127 24.3102C80.7269 24.3103 85.9943 25.5675 89.6801 28.2106C93.2623 30.7796 95.5697 34.8104 95.5697 40.9636C95.5696 53.4463 86.0745 63.3559 74.6127 63.3561C63.1507 63.3561 53.6548 53.4464 53.6547 40.9636C53.6547 34.8105 55.9621 30.7796 59.5443 28.2106C63.2301 25.5674 68.4983 24.3102 74.6127 24.3102Z" fill="var(--svg-eyes)" stroke="url(#paint4_linear_85_185)" stroke-width="4"/>
+                    <path d="M40.8081 8.08123C39.1618 14.7142 51.3081 22.0812 51.3081 22.0812C51.3081 22.0812 52.8418 12.0099 57.3081 8.08123C62.002 3.95237 72.8081 4.08123 72.8081 4.08123C65.0746 0.363601 43.9079 -4.40864 40.8081 8.08123Z" fill="url(#paint5_linear_85_185)"/>
+                    <defs>
+                        <linearGradient id="paint0_linear_85_185" x1="9.0035" y1="55.8484" x2="9.0035" y2="76.8784" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="var(--svg-mid)"/>
+                            <stop offset="1" stop-color="var(--svg-end)"/>
+                        </linearGradient>
+                        <linearGradient id="paint1_linear_85_185" x1="94.3065" y1="55.8484" x2="94.3065" y2="76.8784" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="var(--svg-mid)"/>
+                            <stop offset="1" stop-color="var(--svg-end)"/>
+                        </linearGradient>
+                        <linearGradient id="paint2_linear_85_185" x1="51.6548" y1="13" x2="51.6548" y2="86.0793" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="var(--svg-mid)"/>
+                            <stop offset="1" stop-color="var(--svg-end)"/>
+                        </linearGradient>
+                        <linearGradient id="paint3_linear_85_185" x1="28.6971" y1="22.3102" x2="28.6971" y2="65.3558" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="var(--svg-end)"/>
+                            <stop offset="1" stop-color="var(--svg-mid)"/>
+                        </linearGradient>
+                        <linearGradient id="paint4_linear_85_185" x1="74.6123" y1="22.3102" x2="74.6123" y2="65.3558" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="var(--svg-end)"/>
+                            <stop offset="1" stop-color="var(--svg-mid)"/>
+                        </linearGradient>
+                        <linearGradient id="paint5_linear_85_185" x1="56.7314" y1="0" x2="56.7314" y2="22.0812" gradientUnits="userSpaceOnUse">
+                            <stop stop-color="var(--svg-mid)"/>
+                            <stop offset="1" stop-color="var(--svg-end)"/>
+                        </linearGradient>
+                    </defs>
+                </svg>
                 <p>Hi, I'm Evgenii or just Ev.</p>
-                <h1>I’m a product designer shaping<br>the complex digital productsthrough clear structure,<br>interaction systems, and AI-powered workflows.</h1>
+                <h1>I’m a product designer shaping<br>the complex digital products through clear structure,<br>interaction systems, and AI-powered workflows.</h1>
                 <p>Here you will find the collection of my<br>hard-coded projects I made for the New School’s<br>Typography and Interaction class.</p>
             </hgroup>
             <section>
@@ -65,6 +100,20 @@
                         <a href="/Evgenii-X-Zarah">
                             <figure>
                                 <img src="/img/evgenii-x-zara-cover.jpg" alt="Evgenii and Zara team up for the collaborative design take on poetic crash course on the history of color by Cortney Cassidy.">
+                            </figure>
+                        </a>
+                    </li>
+                    <li class="cover">
+                        <a href="/binding">
+                            <figure>
+                                <img src="/img/fuckts-cover.jpg" alt="F/ckts is the anthology showing that design has never been pure, impartial, or neutral. Together, the three texts reveal that design can exist only within systems of power and interest.">
+                            </figure>
+                        </a>
+                    </li>
+                    <li class="cover">
+                        <a href="/binding">
+                            <figure>
+                                <img src="/img/fuckts-cover.jpg" alt="F/ckts is the anthology showing that design has never been pure, impartial, or neutral. Together, the three texts reveal that design can exist only within systems of power and interest.">
                             </figure>
                         </a>
                     </li>
