@@ -93,13 +93,19 @@ body {
     color: var(--black);
 }
 
-/* HEADER+FOOTER LINE */
-header {
-    width: 100%;
+/* NAV+FOOTER LINE */
+nav {
     position: fixed;
+    top: 0;
     padding: var(--medium);
     margin-block-start: var(--header-offset-top);
     margin-block-end: var(--header-offset-bottom);
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    padding: var(--medium);
 }
 
 nav,
