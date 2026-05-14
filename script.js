@@ -32,3 +32,9 @@ ScrollTrigger.create({
 });
 
 gsap.set('.cover', { transformOrigin: 'right center', force3D: true });
+
+document.querySelectorAll('.cover').forEach(cover => {
+    const img = cover.querySelector('img');
+    cover.addEventListener('mouseenter', () => gsap.to(img, { scale: 1.05, duration: 0.4, ease: 'power2.out' }));
+    cover.addEventListener('mouseleave', () => gsap.to(img, { scale: 1, duration: 0.4, ease: 'power2.out' }));
+});
