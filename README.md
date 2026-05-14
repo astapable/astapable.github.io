@@ -35,7 +35,7 @@ Tendril turns any website into a quick design reference — inspect fonts, text 
 
 ## Sources
 
-Key resources that helped bring this project to life:
+Key resources:
 - GSAP ScrollTrigger (skew on scroll) — https://gsap.com/docs/v3/Plugins/ScrollTrigger/
 - GSAP quickSetter (performance) — https://gsap.com/docs/v3/GSAP/gsap.quickSetter()
 - Lenis smooth scroll — https://lenis.darkroom.engineering
