@@ -20,20 +20,18 @@
     font-family: "Geist";
     font-weight: 400;
     font-size: 120%;
-    scroll-behavior: smooth;
 
     /* ==================== VARIABLES ==================== */
 
-    /* HEADER */
-    --header-offset-top: -0.35rem;
-    --header-offset-bottom: -0.25rem;
+    /* NAV */
+    --nav-offset-top: -0.35rem;
+    --nav-offset-bottom: -0.25rem;
     --underline-thickness: 0.125rem;
 
     /* PRIMARY COLORS */
     --black: #222222;
     --white: #FAFAFA;
     --gray: #BDBDBD;
-    --light-gray: #E8E8E8;
     --card-body: #EDEDED;
 
     /* SVG */
@@ -49,28 +47,39 @@
     }
 
     /* SPACING */
-    --xs: 0.375rem; /* 6px */
-    --m: 0.75rem; /* 12px */
+    --xs: 0.375rem;
+    --m: 0.75rem;
 
     @media (width > 600px) {
-        --m: 1rem; /* 16px */
+        --m: 1rem;
     }
 
     /* PADDING SIZE */
-    --medium: 0.75rem; /* 12px */
-    --large: 1.5rem; /* 24px */
+    --medium: 0.75rem;
+    --large: 1.5rem;
 
     @media (width > 600px) {
-        --medium: 1rem; /* 16px */
-        --large: 1.75rem; /* 28px */
+        --medium: 1rem;
+        --large: 1.75rem;
     }
 
     @media (width > 900px) {
-        --large: 2rem; /* 32px */
+        --large: 2rem;
     }
 
     @media (width > 1200px) {
         --large: 2.5rem;
+    }
+
+    /* DISPLAY GAP */
+    --display-gap: 4rem;
+
+    @media (width > 600px) {
+        --display-gap: 6rem;
+    }
+
+    @media (width > 900px) {
+        --display-gap: 8rem;
     }
 }
 
@@ -79,52 +88,69 @@
     --black: #FAFAFA;
     --white: #222222;
     --gray: #545454;
-    --light-gray: #747474;
     --card-body: #2A2A2A;
     --svg-mid: #BDBDBD;
     --svg-end: #FAFAFA;
     --svg-eyes: #222222;
 }
 
-/* ==================== CONTAINERS STYLE ==================== */
+/* ==================== MAIN ==================== */
 
 body {
     background-color: var(--white);
     color: var(--black);
 }
 
-/* NAV+FOOTER LINE */
 nav {
     position: fixed;
     top: 0;
     padding: var(--medium);
-    margin-block-start: var(--header-offset-top);
-    margin-block-end: var(--header-offset-bottom);
+    margin-block-start: var(--nav-offset-top);
+    margin-block-end: var(--nav-offset-bottom);
+    align-items: center;
+
+    & ul {
+        display: inline-flex;
+        align-items: center;
+    }
 }
 
 footer {
     position: fixed;
     bottom: 0;
     padding: var(--medium);
+
+    & p {
+        line-height: 100%;
+        color: var(--gray);
+        text-transform: uppercase;
+    }
 }
 
 nav,
 footer {
+    z-index: 5;
     display: inline-flex;
     justify-content: space-between;
     width: 100%;
 }
 
-nav ul {
-    display: inline-flex;
+.toggle {
+    display: flex;
     align-items: center;
+    gap: var(--xs);
+    flex-shrink: 0;
+    white-space: nowrap;
+
+    & p {
+        margin-block-start: 0.2em;
+    }
 }
 
-.toggle {
+.logo{
     display: none;
-    gap: var(--xs);
 
-    @media (width > 900px) {
+    @media (width > 800px) {
         display: flex;
     }
 }
@@ -144,7 +170,6 @@ nav ul {
     justify-content: flex-end;
 }
 
-/* MAIN CONTAINERS */
 main {
     display: inline-flex;
     flex-direction: column;
@@ -153,13 +178,9 @@ main {
     width: 100%;
     padding: var(--medium);
     gap: var(--m);
-/* 
-    @media (width > 900px) {
-        height: 100svh;
-    } */
 }
 
-hgroup, 
+hgroup,
 section {
     display: inline-flex;
     flex-direction: column;
@@ -169,17 +190,18 @@ section {
 }
 
 hgroup {
-    height: 50svh;
+    height: 100svh;
     padding-block-start: var(--medium);
 
-    @media (width > 900px) {
-        height: 100svh;
+    & h1,
+    & p {
+        text-align: center;
     }
-}
 
-hgroup h1,
-hgroup p {
-    text-align: center;
+    & svg {
+        pointer-events: none;
+        user-select: none;
+    }
 }
 
 .display {
@@ -187,11 +209,7 @@ hgroup p {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: 8rem;
-
-    @media (width > 900px) {
-        margin-block-start: -9rem;
-    }
+    gap: var(--display-gap);
 
     @media (width > 900px) {
         margin-block-start: -9rem;
@@ -199,16 +217,26 @@ hgroup p {
 }
 
 .cover {
-    width: 70%;
+    width: 100%;
     padding: var(--large);
     background-color: var(--card-body);
+
+    @media (width > 600px) {
+        width: 70%;
+    }
+
+    @media (width > 900px) {
+        width: 60%;
+    }
+
+    @media (width > 1000px) {
+        width: 70%;
+    }
 }
 
 figure {
     width: 100%;
 }
-
-/* FONT STYLES */
 
 h1, p {
     font-weight: 400;
@@ -245,10 +273,4 @@ button:hover {
 html:not([data-theme="dark"]) #btn-dark,
 html[data-theme="dark"] #btn-light {
     color: var(--gray);
-}
-
-footer p {
-    line-height: 100%;
-    color: var(--gray);
-    text-transform: uppercase;
 }
