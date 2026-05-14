@@ -1,35 +1,37 @@
 # Index by Evgenii Astapov
 
-**Live:** [astapable.github.io](https://astapable.github.io)
+**Live Website:** https://astapable.github.io
 
 ## About
 
-This landing page was created as a final Index Project for the Typography & Interaction Course at Parsons School of Design in 2026.
+This landing page was created as my final Index Project for the Typography & Interaction course at Parsons School of Design in 2026.
 
-Index is a single-page portfolio that covers, contextualizes, and consolidates all of my T&I projects from this year in one place. The goal was to build something that functions as a "business card" — introducing me as a designer who codes, and giving each project its own presence through cover imagery and direct links.
+For two semesters, I worked on hand-coded projects that made me sit for hours, test ideas, break layouts, fix bugs, and slowly understand what the browser can do when you stop treating code as something purely technical.
 
-The page is fully hand-coded in HTML, CSS, and JavaScript without any frameworks. It features smooth scrolling, a scroll-based skew animation on the project cards, light and dark mode, and a responsive layout that works across all screen sizes.
+The Index collects all of these projects in one place. It works as a single-page portfolio and a small “business card” — introducing me as a designer who codes, while giving every project its own space, cover image, short context, and direct link.
+
+Everything here is hand-coded with HTML, CSS, and JavaScript, without frameworks. The course started with basic HTML and CSS experiments and eventually moved into more complex interactive systems, including a browser extension.
+
+The final page includes smooth scrolling, scroll-based skew animation on the project cards, light and dark mode, responsive layout, and metadata for the open web.
 
 ## Projects
 
-| Project | URL |
-|---|---|
-| What Designer Can Do | [/manuscript/](https://astapable.github.io/manuscript/) |
-| Evgenii × Zara | [/Evgenii-X-Zarah/](https://astapable.github.io/Evgenii-X-Zarah/) |
-| F/ckts | [/binding/](https://astapable.github.io/binding/) |
-| Links | [/links/](https://astapable.github.io/links/) |
-| Functions | [/functions/](https://astapable.github.io/functions/) |
+**1. What Designer Can Do** - https://astapable.github.io/manuscript/
+What Designer Can Do is a response to the deliberately raw picture of a profession losing its cultural weight drawn in What Design Can’t Do — Graphic Design between Automation, Relativism, Élite and Cognitariat, by Silvio Lorusso does exactly that.
 
-## Learnings
+**2. Evgenii × Zara** - https://astapable.github.io/Evgenii-X-Zarah/
+Evgenii and Zara team up for the collaborative design take on poetic crash course on the history of color by Cortney Cassidy.
 
-Key learnings from this project:
-1. Building a fixed nav and footer using `position: fixed` without a wrapper element
-2. CSS Cascade Layers — using `@layer` to separate reset and project styles cleanly
-3. CSS Nesting with `&` for scoping component styles
-4. Integrating Lenis smooth scroll with GSAP ScrollTrigger
-5. Implementing a scroll-based skew effect using `gsap.quickSetter`
-6. Working with CSS custom properties as a design token system — spacing, color, typography all in one place
-7. Responsive design using modern `@media (width > Npx)` syntax inside `:root` for fluid tokens
+**3. F/ckts Anthology** - https://astapable.github.io/binding/
+F/ckts is the anthology showing that design has never been pure, impartial, or neutral.
+Together, the three texts reveal that design can exist only within systems of power and interest.
+
+**4. Mural in New York** - https://astapable.github.io/links/
+Murals in NYC is a curated collection of murals in New York City as moments of public expression focusing on the images, artists, history and places that shape them.
+These blocks document how murals function as as a way to reflect politics, neighborhoods, culture and change across the city.
+
+**5. Tendrils Browser Extension** - https://astapable.github.io/functions/
+Tendril turns any website into a quick design reference — inspect fonts, text styles, and colors in your browser side panel.
 
 ## Sources
 
